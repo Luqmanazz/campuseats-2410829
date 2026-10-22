@@ -1,15 +1,30 @@
-function MenuItemCard({ item, onAdd}) {
-return (
-<article className="card menu-card">
-<div className="thumb" aria-hidden="true">{item.name.charAt(0)}</div>
-<p className="tag">{item.category}</p>
-<h3>{item.name}</h3>
-<p className="muted">{item.description}</p>
-<p className="price">RM {item.price.toFixed(2)}</p>
-<button className="btn" disabled={!item.available} onClick={() => onAdd(item)}>
-{item.available ? 'Add to cart' : 'Sold out'}
-</button>
-</article>
-)
+
+function MenuItemCard({ item, onAdd, disabled = false }) {
+  return (
+    <article className="menu-card card">
+      <div>
+        <h3>{item.name}</h3>
+        {item.description && <p>{item.description}</p>}
+        {item.category && (
+          <p className="muted">Category: {item.category}</p>
+        )}
+        {item.popular && <span className="popular">Popular</span>}
+      </div>
+
+      <div className="menu-card-bottom">
+        <strong>RM {Number(item.price).toFixed(2)}</strong>
+
+        <button
+          type="button"
+          className="btn"
+          disabled={disabled}
+          onClick={() => onAdd(item)}
+        >
+          {disabled ? 'Unavailable' : 'Add to cart'}
+        </button>
+      </div>
+    </article>
+  )
 }
+
 export default MenuItemCard

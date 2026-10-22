@@ -1,0 +1,120 @@
+
+[
+  {
+    "id": "2410829-kafe-ali",
+    "name": "Kafe Mahallah Ali",
+    "location": "Mahallah Ali, Block C",
+    "openHours": "7:00 am - 10:00 pm",
+    "isOpen": true,
+    "menu": [
+      {
+        "id": "2410829-m1",
+        "name": "Nasi Lemak Ayam",
+        "description": "Coconut rice, fried chicken, sambal, egg and peanuts",
+        "price": 7.5,
+        "available": true,
+        "category": "Rice",
+        "popular": true
+      },
+      {
+        "id": "2410829-m2",
+        "name": "Mee Goreng",
+        "description": "Fried noodles with vegetables and egg",
+        "price": 5.5,
+        "available": true,
+        "category": "Noodles",
+        "popular": true
+      },
+      {
+        "id": "2410829-m3",
+        "name": "Roti Canai",
+        "description": "Flaky flatbread served with dhal curry",
+        "price": 2.0,
+        "available": true,
+        "category": "Bread",
+        "popular": false
+      },
+      {
+        "id": "2410829-m4",
+        "name": "Nasi Goreng",
+        "description": "Malaysian fried rice",
+        "price": 6.0,
+        "available": true,
+        "category": "Rice",
+        "popular": true
+      },
+      {
+        "id": "2410829-m5",
+        "name": "Chicken Fried Rice",
+        "description": "Fried rice with chicken",
+        "price": 7.0,
+        "available": true,
+        "category": "Rice",
+        "popular": false
+      },
+      {
+        "id": "2410829-m6",
+        "name": "Maggi Goreng",
+        "description": "Stir-fried instant noodles",
+        "price": 5.0,
+        "available": true,
+        "category": "Noodles",
+        "popular": false
+      },
+      {
+        "id": "2410829-m7",
+        "name": "Teh Tarik",
+        "description": "Malaysian pulled milk tea",
+        "price": 2.5,
+        "available": true,
+        "category": "Drinks",
+        "popular": true
+      },
+      {
+        "id": "2410829-m8",
+        "name": "Milo Ais",
+        "description": "Iced chocolate malt drink",
+        "price": 3.0,
+        "available": true,
+        "category": "Drinks",
+        "popular": false
+      }
+    ]
+  },
+  {
+    "id": "2410829-coffee",
+    "name": "Campus Coffee Corner",
+    "location": "IIUM Campus Centre",
+    "openHours": "8:00 am - 8:00 pm",
+    "isOpen": true,
+    "menu": [
+      {
+        "id": "2410829-m9",
+        "name": "Iced Latte",
+        "description": "Espresso with chilled milk",
+        "price": 6.5,
+        "available": true,
+        "category": "Drinks",
+        "popular": true
+      },
+      {
+        "id": "2410829-m10",
+        "name": "Chocolate Muffin",
+        "description": "Soft chocolate muffin",
+        "price": 4.0,
+        "available": true,
+        "category": "Bakery",
+        "popular": false
+      },
+      {
+        "id": "2410829-m11",
+        "name": "Chicken Sandwich",
+        "description": "Chicken sandwich with fresh vegetables",
+        "price": 7.0,
+        "available": true,
+        "category": "Food",
+        "popular": true
+      }
+    ]
+  }
+]
