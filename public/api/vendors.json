@@ -21,7 +21,7 @@
         "name": "Mee Goreng",
         "description": "Fried noodles with vegetables and egg",
         "price": 5.5,
-        "available": true,
+        "available": false,
         "category": "Noodles",
         "popular": true
       },
@@ -772,5 +772,165 @@
         "available": true
       }
     ]
-  }
+  },
+
+  {
+  "id": "2410465-kafe-shafiq",
+  "name": "Kafe Shafiq",
+  "location": "IIUM Gombak",
+  "openHours": "08:00 - 22:00",
+  "isOpen": true,
+  "menu": [
+    {
+      "id": "2410465-m1",
+      "name": "Nasi Lemak Ayam",
+      "price": 7.5,
+      "category": "Food",
+      "popular": true
+    },
+    {
+      "id": "2410465-m2",
+      "name": "Nasi Goreng Kampung",
+      "price": 8.0,
+      "category": "Food",
+      "popular": true
+    },
+    {
+      "id": "2410465-m3",
+      "name": "Mee Goreng",
+      "price": 6.5,
+      "category": "Food",
+      "popular": false
+    },
+    {
+      "id": "2410465-m4",
+      "name": "Chicken Chop",
+      "price": 12.0,
+      "category": "Food",
+      "popular": true
+    },
+    {
+      "id": "2410465-m5",
+      "name": "French Fries",
+      "price": 4.5,
+      "category": "Snacks",
+      "popular": false
+    },
+    {
+      "id": "2410465-m6",
+      "name": "Iced Milo",
+      "price": 3.5,
+      "category": "Drinks",
+      "popular": true
+    },
+    {
+      "id": "2410465-m7",
+      "name": "Iced Lemon Tea",
+      "price": 3.0,
+      "category": "Drinks",
+      "popular": false
+    },
+    {
+      "id": "2410465-m8",
+      "name": "Chocolate Cake",
+      "price": 5.0,
+      "category": "Dessert",
+      "popular": false
+    }
+  ]
+},
+
+{
+ "id": "2416644-Hannah's-Cafe",
+ "name": "Hannah's Cafe",
+ "location": "Wadi Budi, IIUM Gombak",
+ "openHours": "8:00 am - 11:00 pm",
+ "isOpen": true,
+"menu": [
+    {
+      "id": "2416644-m1",
+      "name": "Teh Tarik",
+      "price": 2.5,
+      "category": "Drinks",
+      "popular": true
+    },
+    {
+      "id": "2416644-m2",
+      "name": "Iced Milo",
+      "price": 3.5,
+      "category": "Drinks",
+      "popular": true
+    },
+    {
+      "id": "2416644-m3",
+      "name": "Nescafe",
+      "price": 3.0,
+      "category": "Drinks",
+      "popular": false
+    },
+    {
+      "id": "2416644-m4",
+      "name": "Fresh Orange Juice",
+      "price": 4.0,
+      "category": "Drinks",
+      "popular": false
+    },
+    {
+      "id": "2416644-m5",
+      "name": "Nasi Lemak",
+      "price": 5.0,
+      "category": "Main Dish",
+      "popular": true
+    },
+    {
+      "id": "2416644-m6",
+      "name": "Nasi Goreng Kampung",
+      "price": 7.0,
+      "category": "Main Dish",
+      "popular": true
+    },
+    {
+      "id": "2416644-m7",
+      "name": "Mee Goreng",
+      "price": 6.0,
+      "category": "Main Dish",
+      "popular": false
+    },
+    {
+      "id": "2416644-m8",
+      "name": "Chicken Chop",
+      "price": 12.0,
+      "category": "Main Dish",
+      "popular": true
+    },
+    {
+      "id": "2416644-m9",
+      "name": "French Fries",
+      "price": 4.0,
+      "category": "Snacks",
+      "popular": true
+    },
+    {
+      "id": "2416644-m10",
+      "name": "Chicken Nuggets",
+      "price": 5.0,
+      "category": "Snacks",
+      "popular": false
+    },
+    {
+      "id": "2416644-m11",
+      "name": "Kek Batik",
+      "price": 1.5,
+      "category": "Desserts",
+      "popular": true
+    },
+    {
+      "id": "2416644-m12",
+      "name": "Chocolate Cake",
+      "price": 5.0,
+      "category": "Desserts",
+      "popular": false
+    }
+  ]
+}
 ]
