@@ -1,13 +1,27 @@
 
-function MenuItemCard({ item, onAdd, disabled = false }) {
+function MenuItemCard({
+  item,
+  onAdd,
+  onView,
+  disabled = false,
+}) {
   return (
     <article className="menu-card card">
       <div>
-        <h3>{item.name}</h3>
+        <h3
+          onClick={() => onView?.(item)}
+          title="Click to add to Recently Viewed"
+          style={{ cursor: 'pointer' }}
+        >
+          {item.name}
+        </h3>
+
         {item.description && <p>{item.description}</p>}
+
         {item.category && (
           <p className="muted">Category: {item.category}</p>
         )}
+
         {item.popular && <span className="popular">Popular</span>}
       </div>
 

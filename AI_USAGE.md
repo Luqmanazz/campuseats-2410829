@@ -17,3 +17,10 @@
 - What I asked for: Help understanding React useEffect, fetching vendor data from a JSON file, managing cart quantities, calculating the cart total, implementing checkout form validation, and handling loading and error states.
 - What I kept, changed or rejected, and why: I used the guidance to load vendor data from public/api/vendors.json, manage cart items and quantities, calculate the total price dynamically, and validate the checkout form before placing an order. I also adjusted the component structure and CSS class names to match the provided starter stylesheet and maintain the intended interface design.
 - One thing the AI got wrong and how I fixed it: Some initial component updates did not fully match the CSS class names used in the provided starter stylesheet, which affected the intended styling. I corrected the class names and tested the production build again.
+
+
+## Week 4
+- Tool(s): ChatGPT.
+- What I asked for: Help understanding and implementing custom hooks, localStorage persistence, React Router, Cart Context, vendor pages, order history, menu search, and the Recently Viewed feature.
+- What I kept, changed or rejected, and why: I used the step-by-step explanations to separate reusable logic into custom hooks, share cart and order state through Context, add navigation between pages, and persist cart, orders, and recently viewed menu items in localStorage. I retained menu search and improved the styling of the search input and order cards to make the interface clearer.
+- One thing the AI got wrong and how I fixed it: The existing VendorCard component still used the old onSelect approach, so clicking a vendor did not navigate to its menu page. I changed it to use React Router Link and tested the navigation in the browser. I also adjusted the styling after checking the rendered interface.

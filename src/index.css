@@ -582,3 +582,91 @@ a.card:hover {
     padding: 1rem;
   }
 }
+
+
+/* Menu search */
+.menu-search {
+  max-width: 640px;
+  margin: 28px 0 24px;
+}
+
+.menu-search label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.search-input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #1f2937;
+  font: inherit;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-input:focus {
+  border-color: #006b60;
+  box-shadow: 0 0 0 3px rgba(0, 107, 96, 0.15);
+}
+
+.search-input::placeholder {
+  color: #94a3b8;
+}
+
+.search-count {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+
+/* My Orders page */
+.order-list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.order-card {
+  padding: 1.5rem;
+  min-width: 0;
+}
+
+.order-card h3 {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+.order-details p {
+  margin: 0 0 0.85rem;
+  line-height: 1.6;
+}
+
+.order-details .order-total {
+  font-weight: 700;
+  margin-top: 1.25rem;
+}
+
+.order-items {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e4e7eb;
+}
+
+.order-items h4 {
+  margin: 0 0 0.75rem;
+}
+
+.order-items ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  line-height: 1.7;
+}
