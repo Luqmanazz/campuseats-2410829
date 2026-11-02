@@ -18,52 +18,107 @@ function HomePage() {
   }
 
   return (
-    <section>
-      <h2>Today's vendors</h2>
+    <div className="home-page">
 
-      {vendors.length === 0 ? (
-        <p>No vendors available.</p>
-      ) : (
-        <div className="grid">
-          {vendors.map((vendor) => (
-            <VendorCard key={vendor.id} vendor={vendor} />
-          ))}
+      {/* Hero Section */}
+      <section className="hero-section">
+        <div className="hero-content">
+          <p className="hero-label">IIUM CAMPUS FOOD HUB</p>
+          <h1>
+            Find your next meal
+            <br />
+            at CampusEats
+          </h1>
+          <p className="hero-description">
+            Order from your favourite campus vendors, anytime.
+          </p>
         </div>
+
+        <div className="hero-decoration" aria-hidden="true">
+          <span>🍃</span>
+          <span>🍽️</span>
+          <span>🍃</span>
+        </div>
+      </section>
+
+      {/* Recently Viewed */}
+      {recentItems.length > 0 && (
+        <section className="recent-section">
+          <div className="section-heading recent-heading">
+            <div>
+              <div className="heading-title">
+                <span className="heading-icon">◷</span>
+                <h2>Recently Viewed</h2>
+              </div>
+              <p className="muted">
+                Your recently viewed menu items (up to 5).
+              </p>
+            </div>
+
+            <button
+              type="button"
+              className="clear-recent-btn"
+              onClick={clearRecentlyViewed}
+            >
+              Clear All
+            </button>
+          </div>
+
+          <div className="recent-grid">
+            {recentItems.map((item) => (
+              <Link
+                key={`${item.vendorId}-${item.id}`}
+                to={`/vendor/${item.vendorId}`}
+                className="recent-card"
+              >
+                <div className="recent-item-icon" aria-hidden="true">
+                  🍴
+                </div>
+
+                <div className="recent-item-info">
+                  <h3>{item.name}</h3>
+                  <p>{item.vendorName}</p>
+                  <span className="recent-price">
+                    RM {Number(item.price).toFixed(2)}
+                  </span>
+                </div>
+
+                <span className="recent-arrow" aria-hidden="true">
+                  ›
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
       )}
 
-      <section>
-        <h2>Recently Viewed</h2>
-
-        {recentItems.length === 0 ? (
+      {/* Today's Vendors */}
+      <section className="vendors-section">
+        <div className="section-heading">
+          <div className="heading-title">
+            <span className="heading-icon">▣</span>
+            <h2>Today's Vendors</h2>
+          </div>
           <p className="muted">
-            No recently viewed items yet. Open a vendor and click a menu item name.
+            Discover food vendors around your campus.
           </p>
-        ) : (
-          <>
-            <button
-                type="button"
-                className="btn"
-                onClick={clearRecentlyViewed}
-                >
-                Clear recently viewed
-                </button>
+        </div>
 
-            <ul>
-              {recentItems.map((item) => (
-                <li key={item.id}>
-                  <Link to={`/vendor/${item.vendorId}`}>
-                    {item.name}
-                  </Link>
-                  <span className="muted">
-                    {' '}— {item.vendorName} (RM {Number(item.price).toFixed(2)})
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </>
+        {vendors.length === 0 ? (
+          <p className="muted">No vendors available.</p>
+        ) : (
+          <div className="grid vendor-grid-modern">
+            {vendors.map((vendor) => (
+              <VendorCard
+                key={vendor.id}
+                vendor={vendor}
+              />
+            ))}
+          </div>
         )}
       </section>
-    </section>
+
+    </div>
   )
 }
 
