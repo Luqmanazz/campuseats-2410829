@@ -1,22 +1,33 @@
 
+// Link digunakan untuk membuka semula vendor bagi item yang pernah dilihat.
 import { Link } from 'react-router'
+// Hook untuk memuatkan vendor bersama status pemuatan, ralat dan cuba semula.
 import { useVendors } from '../hooks/useVendors.js'
+// Hook untuk membaca dan mengosongkan senarai item yang baru dilihat.
 import { useRecentlyViewed } from '../hooks/useRecentlyViewed.js'
+// Kad vendor untuk memaparkan setiap vendor.
 import VendorCard from '../components/VendorCard.jsx'
+// Paparan status pemuatan dan ralat yang boleh dicuba semula.
 import { Loading, ErrorMessage } from '../components/Status.jsx'
 
+// Halaman utama memaparkan pengenalan, item terkini dan vendor.
 function HomePage() {
+  // Dapatkan data vendor serta status permintaan daripada hook.
   const { vendors, loading, error, reload } = useVendors()
+  // Dapatkan senarai item terkini dan fungsi untuk mengosongkannya.
   const { recentItems, clearRecentlyViewed } = useRecentlyViewed()
 
+  // Tunjukkan status pemuatan sementara data vendor diambil.
   if (loading) {
     return <Loading />
   }
 
+  // Tunjukkan ralat bersama tindakan untuk memuatkan semula data.
   if (error) {
     return <ErrorMessage message={error} onRetry={reload} />
   }
 
+  // Paparkan kandungan utama selepas data vendor selesai dimuatkan.
   return (
     <div className="home-page">
 
@@ -42,6 +53,7 @@ function HomePage() {
       </section>
 
       {/* Recently Viewed */}
+      {/* Bahagian ini hanya muncul jika ada item yang pernah dilihat. */}
       {recentItems.length > 0 && (
         <section className="recent-section">
           <div className="section-heading recent-heading">
@@ -65,6 +77,7 @@ function HomePage() {
           </div>
 
           <div className="recent-grid">
+            {/* Gabungan ID vendor dan item menghasilkan key unik; pautan membuka vendor asal. */}
             {recentItems.map((item) => (
               <Link
                 key={`${item.vendorId}-${item.id}`}
@@ -93,6 +106,7 @@ function HomePage() {
       )}
 
       {/* Today's Vendors */}
+      {/* Paparkan mesej kosong atau senarai vendor bergantung pada data yang diterima. */}
       <section className="vendors-section">
         <div className="section-heading">
           <div className="heading-title">
@@ -108,6 +122,7 @@ function HomePage() {
           <p className="muted">No vendors available.</p>
         ) : (
           <div className="grid vendor-grid-modern">
+            {/* ID vendor menjadi key unik untuk setiap kad dalam senarai. */}
             {vendors.map((vendor) => (
               <VendorCard
                 key={vendor.id}
@@ -122,4 +137,5 @@ function HomePage() {
   )
 }
 
+// Export supaya halaman utama boleh digunakan dalam konfigurasi laluan.
 export default HomePage
