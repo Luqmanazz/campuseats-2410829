@@ -1,41 +1,46 @@
 
-// Gunakan hook simpanan semula guna untuk mengekalkan senarai produk yang dilihat.
 import { useLocalStorage } from './useLocalStorage.js'
+import { useAuth } from './useAuth.js'
 
-// Hook ini mengurus senarai produk yang baru-baru ini dilihat pengguna.
+// Manage recently viewed items separately for each user.
 export function useRecentlyViewed() {
-  // Simpan senarai dalam localStorage supaya ia kekal selepas halaman dimuat semula.
+  const { user } = useAuth()
+
+  // Each user gets their own localStorage key.
+  const storageKey = user?.uid
+    ? `ce-recent-${user.uid}`
+    : 'ce-recent-guest'
+
   const [recentItems, setRecentItems] = useLocalStorage(
-    'campuseats-recently-viewed',
+    storageKey,
     []
   )
 
-  // Tambah produk ke senarai dengan maklumat vendor yang berkaitan.
+  // Add the latest viewed item and keep a maximum of five.
   function addRecentlyViewed(item, vendorId, vendorName) {
-    // Gabungkan butiran produk dengan ID dan nama vendornya.
     const entry = {
       ...item,
       vendorId,
       vendorName,
     }
 
-    // Letakkan produk terbaharu di hadapan, buang salinan lama, dan simpan maksimum lima.
     setRecentItems((previousItems) => [
       entry,
       ...previousItems.filter(
-        (previousItem) => previousItem.id !== item.id
+        (previousItem) =>
+          previousItem.id !== item.id ||
+          previousItem.vendorId !== vendorId
       ),
     ].slice(0, 5))
   }
 
-  // Kosongkan keseluruhan senarai produk yang pernah dilihat.
+  // Clear the current user's recently viewed items.
   function clearRecentlyViewed() {
     setRecentItems([])
   }
 
-  // Sediakan senarai dan fungsi untuk digunakan oleh komponen pemanggil.
   return {
-    recentItems,
+    recentItems: user ? recentItems : [],
     addRecentlyViewed,
     clearRecentlyViewed,
   }
